@@ -374,7 +374,7 @@ export class GitHubV4IssueClient extends GitHubV4Client {
 
     // issue comment
     if (issue.timelineItems?.nodes?.length) {
-      const bodyHTMLs = issue.timelineItems.nodes.filter(e=>e).map(node => node.bodyHTML).filter(bodyHTML => bodyHTML);
+      const bodyHTMLs = issue.timelineItems.nodes.filter(e=>e).map(node => node?.bodyHTML).filter(bodyHTML => bodyHTML);
       comments.push(...bodyHTMLs);
     }
 
